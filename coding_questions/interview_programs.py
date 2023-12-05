@@ -474,4 +474,125 @@
 
 
 # Nov 23
+#  Jenkins
 
+
+# Nov 24
+#
+# Vaibhav likes to play with numbers and he has N numbers. One day he was placing the numbers on the playing board just to count that how many numbers he has. He was placing the numbers in increasing order i.e. from 1 to N. But when he was putting the numbers back into his bag, some numbers fell down onto the floor. He picked up all the numbers but one number, he couldn't find. Now he has to go somewhere urgently, so he asks you to find the missing number.
+# NOTE: Don't use Sorting
+# Example 1:
+# Input:
+# N = 4
+# A[] = {1, 4, 3}
+# Output:
+# 2
+# Explanation:
+# Vaibhav placed 4 integers but he picked
+# up only 3 numbers. So missing number
+# will be 2 as it will become 1,2,3,4.
+# Example 2:
+# Input:
+# N = 5
+# A[] = {2, 5, 3, 1}
+# Output:
+# 4
+# Explanation:
+# Vaibhav placed 5 integers on the board,
+# but picked up only 4 integers, so the
+# missing number will be 4 so that it
+# will become 1,2,3,4,5.
+
+
+# nov 27
+#
+# Calculate the angle between the hour hand and minute hand.
+#
+# Note: There can be two angles between hands; we need to print a minimum of two. Also, we need to print the floor of the final result angle. For example, if the final angle is 10.61, we need to print 10.
+# Example 1:
+#
+# Input:
+# H = 9 , M = 0
+# Output:
+# 90
+# Explanation:
+# The minimum angle between hour and minute
+# hand when the time is 9 is 90 degress.
+# Example 2:
+#
+# Input:
+# H = 3 , M = 30
+# Output:
+# 75
+# Explanation:
+# The minimum angle between hour and minute
+
+# def clock_angle(hour, minute):
+#     if hour < 0 or hour > 12 or minute < 0 or minute > 59:
+#         return "Invalid Input"
+#
+#     minute_angle = 6 * minute
+#
+#     hour_angle = 30 * hour + 0.5 * minute
+#
+#     angle = abs(hour_angle - minute_angle)
+#
+#     angle = min(angle, 360 - angle)
+#
+#     print(int(angle))
+#
+#
+# clock_angle(9, 0)
+# clock_angle(3, 30)
+
+
+# def calculateAngle(hour, minute):
+#     hourAngle = (hour % 12) * 30 + minute / 2
+#     minuteAngle = minute * 6
+#     angle = abs(hourAngle - minuteAngle)
+#     return min(angle, 360 - angle)
+#
+#
+# print(calculateAngle(9, 0))
+# print(calculateAngle(3, 30))
+
+
+# Nov 29
+
+# 1. Merge strings alternatetively
+# Input : "abc"/"pgr"
+# Output : [a, p, b, g, c, r]
+
+str1 = "abc"
+str2 = "pgr"
+
+
+def merge_alternative_strings(string1, string2):
+    result = []
+    max_length = max(len(string1), len(string2))
+
+    for i in range(max_length):
+        if i < len(str1):
+            result.append(string1[i])
+        if i < len(str2):
+            result.append(string2[i])
+
+    return result
+
+
+output = merge_alternative_strings(str1, str2)
+print("Output is : ", output)
+
+# 2. Find common elements from two arrays :
+# int[] arr1 = {1, 3, 5, 7, 9};
+# int[] arr2 = {2, 4, 6, 8, 10, 7};
+# output is 7
+
+arr1 = [1, 3, 5, 7, 9]
+arr2 = [2, 4, 6, 8, 10, 7]
+
+set1 = set(arr1)
+set2 = set(arr2)
+
+common_elements = set1.intersection(set2)
+print("Common element is :", list(common_elements))
