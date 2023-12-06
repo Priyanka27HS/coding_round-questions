@@ -5,7 +5,7 @@ def find_min_difference(arr):
     print(arr)
 
     min_diff = float('inf')
-    first_num, second_num = 0, 0
+    # first_num, second_num = 0, 0
 
     for i in range(len(arr) - 1):
         diff = arr[i + 1] - arr[i]
